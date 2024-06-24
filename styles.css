@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --blanco: #fff;
+    --negro: #111111;
+    --gris: #343A40;
+    
+    --fuentePrincipal: 'Raleway', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+body{
+    font-family: "Raleway", sans-serif;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+h1, h2, h3, p{
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3{
+    font-weight: 900;
+}
+
+h1{
+    font-size: 4.5rem;
+}
+
+h2{
+    font-size: 5rem;
+}
+
+h3{
+    font-size: 4.3rem;
+}
+
+p{
+    font-size: 1.5rem;   
+}
+
+.container{
+    width: 90%;
+    max-width: 100rem;
+    margin: 1rem auto;
+}
+
+.mt-5{
+    margin-top: 5rem;
+}
+
+.btn{
+    color: var(--gris);
+    background-color: var(--blanco);
+    border: 1px solid var(--gris);
+    padding: .5rem 2rem;
+    transition: background-color .3s;
+    display: block;
+    width: max-content;
+}
+
+.btn:hover{
+    background-color: var(--gris);
+    color: var(--blanco);
+}
+
+/*--HEADER--*/
+
+.header{
+    min-height: 60vh;
+    background-image: url(img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    color: var(--blanco);
+    padding: 2rem 0;
+}
+
+.header__container{
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    font-weight: 200;
+    font-size: 3rem;
+    color: var(--blanco);
+}
+
+.title span{
+    font-weight: 900;
+}
+
+.nav__links{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    font-weight: 300;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav__links--container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+@media(min-width: 360px){
+    .nav__links--container{
+        width: unset;
+        flex-direction: row;
+    }
+
+    .nav__links{
+        width: unset;
+}
+
+.nav__link{
+    width: unset;
+    text-decoration: none;
+    padding: 1rem 2rem;
+}
+}
+
+.nav__link{
+    text-decoration: none;
+    padding: 1rem 2rem;
+    color: var(--blanco);
+}
+
+.nav__link:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav__tlf{
+    color: var(--blanco);
+}
+
+.nav__tlf::before{
+    content: "";
+    background-image: url(img/telefono.png);
+    padding-left: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header__title{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.85rem;
+}
+
+
+.header__title::after{
+    content: "Construimos la casa de tus sueños";
+    display: block;
+    font-size: 1.5rem;
+    margin-left: auto;
+    font-weight: 200;
+}
+
+/*-- FIN HEADER--*/
+
+/*--ABOUT--*/
+
+.about{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    background-image: url(img/nosotros.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.about__content{
+    background-color: white;
+    padding: 5rem;
+}
+
+.about__content h2,
+.about__content p{
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-weight: 700;
+}
+
+.about__content h2{
+    font-size: 4rem;
+    font-weight: 900;
+
+}
+
+
+
+/*--FIN ABOUT--*/
+
+/*--MODELOS--*/
+.modelo{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: 5rem;
+}
+
+.modelo:last-of-type{
+    margin-bottom: 0;
+}
+
+.contenido-modelo{
+    padding: 5rem;
+    background-color: var(--blanco);
+}
+
+.basico{
+    background-image: url(img/modelo_basico.jpg);
+
+}
+
+.premier{
+    background-image: url(img/modelo_premier.jpg);
+}
+
+.elite{
+    background-image: url(img/modelo_elite.jpg);
+}
+/*--FIN MODELOS--*/
+
+/*--Galeria--*/
+
+.galeria__principal{
+    margin-bottom: 3rem;
+}
+
+.galeria__principal h3{
+    padding: 2rem 0;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    gap: 1rem;
+}
+
+.galeria__img:nth-child(2){
+    height: 100%;
+    grid-row: 2/ -1;
+   object-fit: cover;
+}
+
+.galeria__img:nth-child(3){
+    height: 100%;
+    grid-column: 2 / 3;
+    grid-row: 3/5;
+   object-fit: cover;
+}
+.galeria__img:nth-child(6){
+    height: 100%;
+    grid-column: 2 / 3;
+    grid-row: 1/3;
+   object-fit: cover;
+}
+
+/*--FIN Galeria--*/
+
+/*--FOOTER--*/
+
+.footer{
+    background: url(img/footer_bg.jpg) center;
+}
+
+.footer__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    margin: 0 auto;
+}
+
+.copyright{
+    margin: unset;
+    text-align: center;
+    background-color: var(--negro);
+    color: var(--blanco);
+    padding: 1rem 0;
+}
+
+/*--FIN FOOTER--*/
+
+
+
+
+@media(min-width: 850px){
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .title{
+        font-size: 4.5rem;
+    }
+
+    .nav__links{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 1.7rem;
+        font-weight: 300;
+        align-items: flex-end;
+    }
+
+    
+.header__title{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 5rem;
+}
+
+.about{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.about__content{
+    grid-column: 2 / 4;
+}
+
+
+
+.modelo{
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+.basico .contenido-modelo {
+    background-color: var(--blanco);
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    padding: 2rem 2rem 2rem 0;
+}
+
+.basico{
+    background-image: url(img/modelo_basico.jpg);
+    background-position: top right ;
+}
+
+.premier .contenido-modelo{
+    grid-column: 2/3;
+
+    padding: 2rem 0 2rem 2rem;
+}
+
+.premier{
+    background-image: url(img/modelo_premier.jpg);
+    background-position: top left ;
+}
+
+.elite .contenido-modelo{
+    padding: 2rem 2rem 2rem 0;
+}
+
+.elite{
+    background-image: url(img/modelo_elite.jpg);
+    background-position: top right;
+}
+
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    gap: 1rem;
+   
+}
+
+.galeria__img:nth-child(2){
+    height: 100%;
+   grid-row: 2/4;
+   grid-column: 1/2;
+   object-fit: cover;
+}
+.galeria__img:nth-child(3){
+    height: unset;
+    grid-column: unset;
+    grid-row: unset;
+   object-fit: cover;
+}
+
+.galeria__img:nth-child(6){
+    height: 100%;
+   grid-row: 1/3;
+   grid-column: 3/4;
+   object-fit: cover;
+}
+
+
+.footer__container{
+    align-items: end;
+    min-height: 50vh;
+    padding-bottom: 3rem;
+}
+
+}
